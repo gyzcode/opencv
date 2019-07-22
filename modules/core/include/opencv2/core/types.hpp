@@ -436,6 +436,8 @@ public:
     Point_<_Tp> tl() const;
     //! the bottom-right corner
     Point_<_Tp> br() const;
+    //! the center
+    Point_<_Tp> center() const;
 
     //! size (width, height) of the rectangle
     Size_<_Tp> size() const;
@@ -1878,6 +1880,12 @@ template<typename _Tp> inline
 Point_<_Tp> Rect_<_Tp>::br() const
 {
     return Point_<_Tp>(x + width, y + height);
+}
+
+template<typename _Tp> inline
+Point_<_Tp> Rect_<_Tp>::center() const
+{
+    return Point_<_Tp>(x + width/2, y + height/2);
 }
 
 template<typename _Tp> inline
